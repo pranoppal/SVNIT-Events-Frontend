@@ -7,28 +7,18 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import {TouchableRipple} from 'react-native-paper';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import {Button} from 'react-native-paper';
-
-import {styles} from './EventDetail.styles';
+import {Button, TouchableRipple} from 'react-native-paper';
+import { BackButton } from '../../../components'
+import {styles} from './EventDetail.style';
 
 const EventDetail = ({route, navigation}) => {
   const [event, setEvent] = useState(route.params.event);
   const [isLoading, setLoading] = useState(false);
 
-  const backButtonComponent = () => {
-    return (
-      <TouchableRipple
-        onPress={() => navigation.goBack()}
-        rippleColor="#c80202"
-        style={styles.backButton}>
-        <MaterialIcons name="arrow-back" size={24} color="#fff" />
-      </TouchableRipple>
-    );
-  };
+  
   return !isLoading ? (
     <ImageBackground
       source={require('../../../../assets/bg.png')}
@@ -36,7 +26,7 @@ const EventDetail = ({route, navigation}) => {
       <ScrollView>
         <View style={{flex: 1, flexDirection: 'column'}}>
           <View style={{height: 150}}>
-            {backButtonComponent()}
+          <BackButton navigation={navigation} top={24}/>
             <Image
               source={require('../../../../assets/eventDetailBg.png')}
               resizeMode="stretch"
@@ -93,7 +83,7 @@ const EventDetail = ({route, navigation}) => {
         />
       </View>
     </ImageBackground>
-  );
-};
+  )
+}
 
 export default React.memo(EventDetail);
