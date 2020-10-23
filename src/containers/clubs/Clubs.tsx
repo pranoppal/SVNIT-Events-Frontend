@@ -3,12 +3,12 @@ import {
   View,
   Text,
   ImageBackground,
-  StyleSheet,
   Image,
   ScrollView,
 } from 'react-native';
 import CLUBS_DATA from './Dummy';
-export default function Clubs() {
+import {styles} from './Clubs.style'
+const Clubs = () => {
   const showClubsCards = () => {
     // if (!isEmpty(events)) {
     const cards = CLUBS_DATA.map((club, index) => {
@@ -63,27 +63,4 @@ export default function Clubs() {
   );
 }
 
-const styles = StyleSheet.create({
-  clubLogo: {height: 60, width: 90, borderRadius: 5},
-  cardContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    width: '80%',
-    alignSelf: 'center',
-    height: 100,
-    marginBottom: 24,
-  },
-  clubTextStyle: {
-    fontSize: 24,
-    fontFamily: 'Helvetica',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 8,
-    color: '#ffffff',
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-});
+export default React.memo(Clubs)

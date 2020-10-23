@@ -1,6 +1,47 @@
 import { StyleSheet,Dimensions } from 'react-native'
 const {width, height} = Dimensions.get('window')
 export const styles = StyleSheet.create({
+  participateButton:{
+    backgroundColor:'#c80202',
+    width:width*0.87,
+    borderRadius:6,
+  },
+  participateButtonContainer:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  timeVenueContainer: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 24,
+    marginVertical: 8,
+    alignItems: 'center',
+  },
+  eventTimeContainer: {flexDirection: 'row', flex: 1, alignItems: 'center'},
+  carouselContainer:{
+    flex:2,
+  },
+  eventDetailVenueLocationText: {
+    fontSize: 16,
+    fontFamily: 'Nunito-Regular',
+    textAlignVertical: 'center',
+    marginStart: 4,
+    marginBottom: 3,
+    color:'#C80202',
+  },
+  eventDetailTextStyle:{
+    fontSize:16,
+    color:'#000000',
+  },
+  eventDetailTextStyleContainer:{
+    flex:3,
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    marginHorizontal:24,
+  },
     backButton:{
       zIndex:999,
       position:'absolute',

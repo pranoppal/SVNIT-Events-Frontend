@@ -2,12 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   ActivityIndicator,
   Image,
   ScrollView,
   ImageBackground,
-  Dimensions,
   Animated,
 } from 'react-native';
 import {useStoreState, useStoreActions} from 'easy-peasy';
